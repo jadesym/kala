@@ -1,0 +1,35 @@
+<h1>Listing contactusmsgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>User</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contactusmsgs.each do |contactusmsg| %>
+      <tr>
+        <td><%= contactusmsg.first_name %></td>
+        <td><%= contactusmsg.last_name %></td>
+        <td><%= contactusmsg.user_id %></td>
+        <td><%= contactusmsg.email %></td>
+        <td><%= contactusmsg.phone_number %></td>
+        <td><%= link_to 'Show', contactusmsg %></td>
+        <td><%= link_to 'Edit', edit_contactusmsg_path(contactusmsg) %></td>
+        <td><%= link_to 'Destroy', contactusmsg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contactusmsg', new_contactusmsg_path %>
